@@ -12,6 +12,10 @@ easyPredCI <- function(model,
   ## baseline prediction, on the linear predictor (logit) scale:
   pred0 <- predict(model,re.form=NA,newdata=newdata)
   
+  if(is.null(newdata) == TRUE){
+    newdata <- model@frame
+  }
+  
   ## fixed-effects model matrix for new data
   X <- model.matrix(formula(model,
                             fixed.only=TRUE)[-2],
