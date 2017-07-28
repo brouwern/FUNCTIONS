@@ -6,7 +6,7 @@
 #
 ### Bolker::easyPredCI function ###
 easyPredCI <- function(model,
-                       newdata,
+                       newdata = NULL,
                        alpha=0.05) 
 {
   ## baseline prediction, on the linear predictor (logit) scale:
